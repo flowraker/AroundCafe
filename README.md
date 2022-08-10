@@ -31,5 +31,5 @@
 ## 💛전체시연
  * https://youtu.be/HARW7QBXtJE
  
-## 💛담당부분 이슈사항
+## 💛담당기능 이슈사항
  * https://youtu.be/HARW7QBXtJE?t=1757
