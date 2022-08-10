@@ -28,13 +28,8 @@
  * ### 커뮤니케이션 <img src="https://img.shields.io/badge/Gather-3766AB?style=flat"/> <img src="https://img.shields.io/badge/KaKaoTalk-3766AB?style=flat"/>
  * ### 회의록 <img src="https://img.shields.io/badge/Notion-3766AB?style=flat"/>
 
-## 💛시연
+## 💛전체시연
  * https://youtu.be/HARW7QBXtJE
- * 00:00 기획의도
- * 01:50 팀원소개
- * 02:50 시연
- * 20:48 PARK SUNG BEAN
- * 29:17 LEE TAE HO
- * 37:50 SEKINE YUKI
- * 48:14 KIM HEE JIN
- * 59:55 IN JI YEON
+ 
+## 💛담당부분 이슈사항
+ * https://youtu.be/HARW7QBXtJE?t=1757
