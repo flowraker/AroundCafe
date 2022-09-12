@@ -154,7 +154,7 @@ export default {
     async sendEmail(paymentStatus) {
       const sendInfo = {
         role: this.role,
-        mem_no: this.user.memNo,
+        mem_no: this.order.memNo,
         cafe_no: this.order.cafeNo,
         status: paymentStatus,
       }

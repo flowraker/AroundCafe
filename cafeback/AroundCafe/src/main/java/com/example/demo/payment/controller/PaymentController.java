@@ -36,11 +36,16 @@ public class PaymentController {
 
     @GetMapping("/list/{memNo}")
     public List<PaymentResponse> getPaymentList(@PathVariable Long memNo) {
-
+        Long startTime = System.currentTimeMillis();
+        log.info("find member");
         Member member = memberRepository.findByMemNo(memNo)
                 .orElseThrow(() -> new UsernameNotFoundException("No user exists"));
-
-        return paymentService.getAllPaymentResponse(member);
+        log.info("thread start");
+        List<PaymentResponse> paymentResponseList = paymentService.getAllPaymentResponse(member);
+        Long endTime = System.currentTimeMillis();
+        String num = String.valueOf(endTime - startTime);
+        log.info(num);
+        return paymentResponseList;
     }
     @PutMapping("/order/status/{paymentNo}")
     public void modifyPaymentStatus(@PathVariable Long paymentNo, @Valid @RequestBody PaymentRequest paymentRequest){
@@ -49,7 +54,12 @@ public class PaymentController {
 
     @GetMapping("/cafe/{cafeNo}")
     public List<PaymentResponse> getPaymentListByCafeNo(@PathVariable Long cafeNo) {
-        return paymentService.getAllPaymentResponse(cafeNo);
+        Long startTime = System.currentTimeMillis();
+        List<PaymentResponse> paymentResponseList = paymentService.getAllPaymentResponse(cafeNo);
+        Long endTime = System.currentTimeMillis();
+        String num = String.valueOf(endTime - startTime);
+        log.info(num);
+        return paymentResponseList;
     }
 
     @DeleteMapping("/{paymentNo}")
@@ -71,7 +81,7 @@ public class PaymentController {
 
     @GetMapping("/sales/{cafeNo}/{date}")
     public List<PaymentSalesDetailResponse> getPaymentSalesDetailList(@PathVariable Long cafeNo,
-                                                                    @PathVariable String date){
+                                                                      @PathVariable String date){
         return paymentService.getPaymentSalesDetailList(cafeNo, date);
     }
 
@@ -91,7 +101,7 @@ public class PaymentController {
         return paymentService.getPaymentCafeSalesDetailListByAdmin(cafeNo);
     }
 
- @PostMapping("/list/list")
+    @PostMapping("/list/list")
     public List<PaymentResponse> getPaymentByDate(@Valid @RequestBody AdminUsageRequest request){
 
 
@@ -101,5 +111,5 @@ public class PaymentController {
 
         return paymentService.getPaymentByDate(request.getMemNo(),request.getDate1(), request.getDate2());
 
- }
+    }
 }
